@@ -5,6 +5,8 @@
  */
 package programacionm8;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author luigi
@@ -14,6 +16,7 @@ public class Articulo {
     private String Nombre;
     private double Precio;
     private int Stock;
+    public ArrayList<Opinion> opiniones = new ArrayList();
 
     public Articulo() {}
     
@@ -23,7 +26,7 @@ public class Articulo {
   this.Precio = Precio;
   this.Stock = Stock;
     }
-    
+    //getters y setters
    public String getCodigo(){
    return Codigo;
    }
@@ -49,9 +52,28 @@ public class Articulo {
    this.Stock = Stock;
    }
 
+    public void setOpiniones(ArrayList<Opinion> opiniones) {
+        this.opiniones = opiniones;
+    }
+
+    public ArrayList<Opinion> getOpiniones() {
+        return opiniones;
+    }
+    public void agregarComentario(Opinion op1){
+        for (int i = 0; i < opiniones.size(); i++) {
+            if (opiniones.get(i) == null) {
+                opiniones.add(op1);
+             
+            }
+        }
+    }
+    
+    //toString
     @Override
     public String toString() {
-        return "Articulo{" + "Codigo=" + Codigo + ", Nombre=" + Nombre + ", Precio=" + Precio + ", Stock=" + Stock + '}';
+        return "Articulo{" + "Codigo=" + Codigo + ", Nombre=" + Nombre + ", Precio=" + Precio + ", Stock=" + Stock + ", opiniones=" + opiniones + '}';
     }
+    
+    
     
 }
