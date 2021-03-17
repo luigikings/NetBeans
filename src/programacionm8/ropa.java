@@ -20,7 +20,7 @@ public class ropa extends Articulo {
         this.Talla = Talla;
         this.Color = Color;
     }
-    
+    //getters y setters
    public String getColor(){
     return Color;
    }

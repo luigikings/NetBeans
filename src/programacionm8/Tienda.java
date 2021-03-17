@@ -71,7 +71,7 @@ public class Tienda {
 		c.add(new Articulo("0002", "Teclado", 10.00F, 100));
 		c.add(new Articulo("0003", "RJ45 2M", 4.50F, 50));
 		c.add(new Articulo("0004", "Raton", 20.00F, 15));
-                c.add(new Ropa("rojo", TallaSML.L, "0005", "jersey", 
+                c.add(new ropa("rojo", TallaSML.l, "0005", "jersey", 
                         25.50F, 100));
                 c.add(new Electrodomestico("Hogar", ClaseE.A, "0006", 
                         "Lavadora", 526.89F, 10));
@@ -191,25 +191,25 @@ public class Tienda {
 
 	}
         
-        private static void crearUsuario(Usuario us, Scanner sn){
+        private static void crearUsuario(usuario us, Scanner sn){
             String nombre, email, pass;
             do{
                 System.out.println("Dame un nombre de usuario: ");
                 nombre = sn.nextLine();
-            }while(us.checkNombre(nombre) == false);
+            }while(us.verNombre(nombre) == false);
             us.setNombre(nombre);
             
             do{
                 System.out.println("Dame un email: ");
                 email = sn.nextLine();
-            }while(us.checkEmail(email) == false);
+            }while(us.verEmail(email) == false);
             us.setEmail(email);
             
             do{
                 System.out.println("Dame un password: ");
                 pass = sn.nextLine();
-            }while(us.checkPassword(pass) == false);
-            us.setPassword(pass);
+            }while(us.segPass(pass) == false);
+            us.segPass(pass);
             
             System.out.println(us);
             

@@ -15,11 +15,12 @@ public class Frigorifico extends Electrodomestico {
     
     public Frigorifico (){}
 
-    public Frigorifico (int TempMin, int AguaDep, String gama, String color,TallaSML Talla, String codigo, String nombre, float precio, int stock){
-        super(gama, color, Talla, codigo, nombre, precio, stock);
+    public Frigorifico (int TempMin, int AguaDep, String gama, ClaseE clasificacion, String codigo, String nombre, float precio, int stock){
+        super(gama, clasificacion ,codigo ,nombre, precio, stock);
         this.TempMin = TempMin;
         this.AguaDep = AguaDep;
     }
+        //getters y setters
     public int getTempMin(){
     return TempMin;
     }
@@ -32,4 +33,10 @@ public class Frigorifico extends Electrodomestico {
     public void setAguaDep(){
     this.AguaDep = AguaDep;
     }
+
+    @Override
+    public String toString() {
+        return "Frigorifico{" + "TempMin=" + TempMin + ", AguaDep=" + AguaDep + '}';
+    }
+    
 }

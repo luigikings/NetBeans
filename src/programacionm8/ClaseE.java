@@ -9,6 +9,6 @@ package programacionm8;
  *
  * @author luigi
  */
-class ClaseE {
-    
+enum ClaseE {
+    App,Ap,A,B,C,D,E,F;
 }

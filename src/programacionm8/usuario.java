@@ -23,7 +23,7 @@ public class usuario {
         this.pass = pass;
         this.email = email;
     }
-
+    //getters y setters
     public String getNombre() {
         return nombre;
     }
@@ -47,35 +47,48 @@ public class usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-    public boolean segPass(){
+    //validar pass
+    public boolean segPass(String pass){
+        boolean validar = false;
+        //pass de por lo menos 8 caracteres
         if(pass.length()>=8){
-            if(){
-                return true;
+            //match = true cuando no haya ninguna mayuscula (Queremos al menos 1 Mayuscula)
+            if(pass.matches("[^A-Z]+") == false){
+                //match = false cuando haya un espacio ,tab, etc. (No queremos espacios)
+                if(pass.matches("[\\S]+") == true){
+                    //cumple todo --> true
+                    validar = true;
+                }else{
+                }
             }else{
-                return false;
             }
         }else {
-            return false;
         }
-          
+          return validar;
            
     }
-    public boolean verEmail(){
-        if(email.contains("@")){
-            return true;
+    //verificar que el correo tenga "@"
+    public boolean verEmail(String email){
+        boolean validar = false;
+        //match = false cuando haya un @
+        if(email.matches("[a-zA-Z][^(@)]+") == false){
+            validar = true;
         }
         else{
-            return false;
         }
+        return validar;
     }
-    public boolean verNombre(){
+    //Validar nombre para colocar en el correo
+    public boolean verNombre(String nombre){
+        boolean validar = false;
+        //nombre del correo por lo menos de 6 caracteres
         if(nombre.length()>=6){
             email = (nombre+"@correo.es");
-            return true;
+            validar = true;
         }
         else {
-            return false;
         }
+        return validar;
     }
     
 }

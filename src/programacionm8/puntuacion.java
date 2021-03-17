@@ -9,6 +9,6 @@ package programacionm8;
  *
  * @author luigi
  */
-enum TallaSML {
-    s,m,l,xl,xll;
+enum puntuacion {
+    horrible,malo,regular,bueno,perfecto;
 }
